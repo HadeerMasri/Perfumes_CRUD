@@ -1,5 +1,7 @@
+<!-- show details of one perfume from DB
+name,price,description,images
+-->
 @extends('layouts.app')
-
 @section('content')
     <div class="row">
         <div class="col-12" style="padding-left: 250px;margin-top: 40px;margin-right: 250px">

@@ -1,3 +1,6 @@
+<!-- create new perfume and store in DB
+name,price,description,images
+-->
 @extends('layouts.app')
 @section('content')
     <div class="row">
@@ -8,6 +11,7 @@
                         <div class="card-header bg-info">
                             <h2 class="m-b-0 text-white">Add New Perfume</h2></div>
                         <div class="card-body">
+                            <!-- Start Form -->
                             <form action="{{ route('perfume.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-body" >
@@ -46,6 +50,7 @@
                                 </div>
 
                             </form>
+                            <!-- End Form -->
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ class PerfumeController extends Controller
      */
     public function index()
     {
-        $perfumes = Perfume::all();
+        $perfumes = Perfume::all(); //return all perfumes
         return view('perfume.index',compact('perfumes'));
     }
 
@@ -27,7 +27,7 @@ class PerfumeController extends Controller
      */
     public function create()
     {
-        $perfumes = Perfume::all();
+        $perfumes = Perfume::all();//return all perfumes
         return view('perfume.create', compact('perfumes'));
     }
 
@@ -40,7 +40,7 @@ class PerfumeController extends Controller
     public function store(Request $request)
     {
         $request['user_id'] = Auth::id();
-        $perfume = Perfume::create($request->all());
+        $perfume = Perfume::create($request->all());//store name,price,description in DB
 
         if ($request->hasFile('images')) {
             $images = $request->file('images');
@@ -51,7 +51,7 @@ class PerfumeController extends Controller
                     'path' => $image->store('PerfumesImages')
                 ]);
             }
-            $perfume->images()->saveMany($imagesPath);
+            $perfume->images()->saveMany($imagesPath);// store images in DB
         }
         return redirect()->route('perfume.index');
     }
@@ -121,7 +121,7 @@ class PerfumeController extends Controller
      */
     public function destroy($id)
     {
-        Perfume::find($id)->delete();
+        Perfume::find($id)->delete();// delete perfume
         return redirect()->back();
     }
 }

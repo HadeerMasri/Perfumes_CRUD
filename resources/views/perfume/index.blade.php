@@ -1,3 +1,6 @@
+<!-- show perfumes from DB
+name,price,description,images in datatable using bootstrap
+-->
 @extends('layouts.app')
 @section('cssHeader')
     <link href="{{asset('assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css')}}" rel="stylesheet">

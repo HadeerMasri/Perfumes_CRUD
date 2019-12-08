@@ -36,7 +36,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    //relation between users and perfumes  one to many.
     public function Perfumes(){
         return $this->hasMany(Perfume::class);
     }

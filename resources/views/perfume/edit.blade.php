@@ -1,7 +1,8 @@
-@extends('layouts.app')
-@section('cssHeader')
+<!-- edit perfume and update in DB
+name,price,description,images
+-->
 
-@endsection
+@extends('layouts.app')
 @section('content')
     <div class="row">
         <div class="col-12">
@@ -11,6 +12,7 @@
                         <div class="card-header bg-info">
                             <h2 class="m-b-0 text-white">Update of Perfume</h2></div>
                         <div class="card-body">
+                            <!-- Start Form -->
                             <form action="{{ route('perfume.update',$perfume->id) }}" method="post" enctype="multipart/form-data">
                                 {{ method_field('put') }}
                                 @csrf
@@ -50,6 +52,7 @@
 
 
                             </form>
+                            <!-- End Form -->
                         </div>
                     </div>
                 </div>
@@ -60,32 +63,3 @@
 
 @endsection
 
-@section('jsFooter')
-    <script>
-        $(document).ready(function () {
-            $('.chalets').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'copy', 'csv', 'excel', 'print'
-                ],
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Arabic.json",
-                }
-            });
-
-        });
-    </script>
-
-    <script src="{{asset('assets/extra-libs/datatables.net/js/jquery.dataTables.js')}}"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
-
-
-
-
-@endsection
